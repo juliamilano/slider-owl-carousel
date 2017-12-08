@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="lib/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="lib/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<script src="lib/jquery-3.2.1.min.js"></script>
+<script src="lib/owl-carousel/owl.carousel.min.js"></script>
+    <title>Document</title>
+<style>
+    body{
+        background: white;
+        
+    }
+    *{
+        margin:0;
+        padding: 0;
+       -box-sizing: border-box;
+    }
+    .main{
+        -background: grey;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+    }
+    .one-slider .item {
+        position: relative;
+        height: 600px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+}
+
+ .one-slider #main-sl-1:before,
+ .one-slider #main-sl-2:before,
+ .one-slider #main-sl-3:before{
+     content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+ }
+#main-sl-1:before{
+    background-image: url('img/8.jpg');
+}
+#main-sl-2:before{
+    background-image: url('img/9.jpg');
+}
+#main-sl-3:before{
+    background-image: url('img/10.jpg');
+}
+
+
+    .one-slider .item .text{
+        width: 700px;
+        margin: 0 auto;
+        font-size: 60px;
+        text-align: center;
+        padding-top: 20%;
+        position: relative;
+        z-index: 5;
+    }
+
+    .one-slider .owl-nav{
+		width: 100%;
+    }
+    
+    .one-slider .owl-nav div{
+        width: 64px;
+		height: 64px;
+		text-align: center;
+		position: absolute;
+		line-height: 64px;
+		font-size: 36px;
+        background: rgba(200,200,200, 0.5);
+        color: #000;
+        border-radius: 50%;
+       
+    }
+	.one-slider .owl-nav div:hover{
+        background: rgba(77,72,72, 0.5);
+        color: #fff;
+    }	
+    .one-slider .owl-prev{
+       left: 10px;
+       top: 250px;
+    }
+    .one-slider .owl-next{
+       right: 10px;
+       top: 250px;
+    }
+    .one-slider .owl-dots{
+        position: absolute;
+        left: 45%;
+        bottom: 60px;
+        z-index: 10;
+        height: 20px;
+        width: 10%;
+        text-align: center;
+        color: #000;
+    }
+
+     .one-slider .owl-dots .owl-dot{
+        width:12px;
+		height: 12px;
+		background: rgba(255,255,255, 0.5);
+		border-radius: 10em;
+		display: inline-block;
+		margin: 5px;
+     }
+     .one-slider .owl-dots .owl-dot.active{
+          background: #222;
+     }
+		
+
+
+
+    .two-slider.owl-carousel{
+        position: relative;
+        width: 800px;
+        margin: 100px auto;
+    }
+    .two-slider .owl-nav{
+		width: 100%;
+    }
+	.two-slider .owl-nav div{
+        width: 40px;
+		height: 40px;
+		text-align: center;
+		position: absolute;
+		line-height: 40px;
+		font-size: 30px;
+        color: #000;
+        border-radius: 50%;
+       
+    }
+
+    .two-slider .owl-prev{
+       left: -40px;
+       top: 50px;
+    }
+    .two-slider .owl-next{
+       right: -40px;
+       top: 50px;
+    }
+    
+</style>
+</head>
+<body>
+    <div class="main">
+        <div class="owl-carousel one-slider">
+            <div class="item owl-carousel-item" id="main-sl-1">
+                <div class="text" >“You never know how strong you are <br/> until being strong is your only choice.”
+                </div>
+            </div>
+            <div class="item owl-carousel-item" id="main-sl-2" >
+                <div class="text" >“One good thing about music, when it hits you, you feel no pain.” </div>
+            </div>
+            <div class="item owl-carousel-item" id="main-sl-3">
+                 <div class="text" >“Some people feel the rain. Others just get wet.”</div>
+            </div>
+   
+        </div>
+
+
+        <div class="owl-carousel two-slider">
+            <div class="item owl-carousel-item"><img src="img/1.jpeg" alt="1"></div>
+             <div class="item owl-carousel-item"><img src="img/2.jpg" alt="2"></div>
+             <div class="item owl-carousel-item"><img src="img/3.jpg" alt="3"></div>
+             <div class="item owl-carousel-item"><img src="img/4.jpg" alt="4"></div>
+             <div class="item owl-carousel-item"><img src="img/5.jpg" alt="5"></div>
+             <div class="item owl-carousel-item"><img src="img/6.jpg" alt="6"></div>
+
+        </div>
+    </div>
+
+<script>
+$(function() {
+
+$(document).ready(function(){
+        $(".owl-carousel.one-slider").owlCarousel();
+        $(".owl-carousel.two-slider").owlCarousel();
+    });
+
+    $('.owl-carousel.one-slider').owlCarousel({
+        loop:true,
+        nav:true,
+        merge:true,
+        navText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">'],
+        responsiveClass: true,
+        responsive:{
+            0:{
+                items:1
+            }
+        }
+    })
+
+
+    $('.owl-carousel.two-slider').owlCarousel({
+        loop:true,
+        margin:20,
+        nav:true,
+        navText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">'],
+        responsiveClass: true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            }
+        }
+    });
+});
+ </script>
+   
+</body>
+</html>
